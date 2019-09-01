@@ -1,0 +1,54 @@
+// main: ../style.less
+
+.nav {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.nav__link {
+  margin-left: 2rem;
+  position: relative;
+  font-size: 0.93rem; // 14px
+  color: @black;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-decoration: none;
+
+  // Подчёркивание элементов меню
+  &:after {
+    content: "";
+    width: 0;
+    height: 2px;
+    background-color: @black;
+
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    z-index: 1;
+
+    transition: width 0.1s linear;
+  }
+
+  // Элементы без модификатора --btn
+  &:hover:not(.nav__link--lastBtn) {
+    &:after {
+      width: 100%;
+    }
+  }
+
+  // Модификаторы
+  &--lastBtn {
+    padding: 0.66rem 2rem; // 10px 30px
+
+    border: 2px solid @black;
+    border-radius: 20px;
+
+    transition: background-color 0.2s linear, color 0.2s linear;
+
+    &:hover {
+      background-color: @black;
+      color: @white;
+    }
+  }
+}

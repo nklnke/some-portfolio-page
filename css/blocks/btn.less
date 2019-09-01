@@ -1,0 +1,61 @@
+// main: ../style.less
+
+// Стилизацию кнопок нужно делать и на a, и на button сразу
+.btn {
+  display: inline-block;
+  vertical-align: top;
+  // Пэддинги в em, чтобы они зависели не от размера шрифта, а от размера кнопки
+  padding: 1.05em 1.7em; // 15px 27px
+  min-width: 170px;
+
+  border: 1px solid @gray;
+  border-radius: 1.8em; // В em, потому что маленьким кнопкам он нужен меньше, большим больше
+  background: none;
+  cursor: pointer;
+
+  font-family: inherit;
+  font-size: 1.06rem; // 16px
+  line-height: 1.1;
+  color: @black;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+
+  transition: background-color 0.15s linear, color 0.15s linear,
+    box-shadow 0.15s linear, border-color 0.15s linear;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    background-color: @black;
+    color: @white;
+    box-shadow: 2px 2px 10px fade(#000, 24);
+    border-color: @black;
+  }
+
+  // margin-left для кнопки, если она идёт после другой кнопки .btn
+  + .btn {
+    margin-left: 1rem; // 15px
+  }
+
+  // Модификаторы
+  &--sm {
+    padding: 0.7rem 1.2em;
+    min-width: 0;
+
+    font-size: 0.94rem;
+    font-weight: 700;
+    border-width: 2px;
+  }
+
+  &--active {
+    background-color: @black;
+    color: @white;
+
+    &:hover {
+      background-color: @lightgray;
+    }
+  }
+}
