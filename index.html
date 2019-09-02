@@ -372,13 +372,20 @@
   <div class="modal">
     <div class="modal__dialog">
 
+      <button class="modal__close" type="button">
+        <i class="fas fa-times-circle"></i>
+      </button>
+
       <div class="modal-work">
-        <div class="modal-work__preview"></div>
+        <div class="modal-work__preview">
+          <img class="modal-work__photo" src="https://placehold.it/790x780" alt="">
+        </div><!-- /.modal-work__preview -->
+
         <div class="modal-work__content">
 
           <div class="modal-work__header">
             <h3 class="modal-work__title">Project title</h3>
-            <div class="modal-work__info">category | 2066</div>
+            <div class="modal-work__info">category <span>|</span> 2066</div>
           </div>
 
           <div class="modal-work__client">
@@ -397,6 +404,15 @@
               ipsum
               accusamus dolore, incidunt atque architecto cum dolorum maxime quasi eius praesentium?
             </p>
+          </div>
+
+          <div class="modal-work__footer">
+            <button class="modal-work__btn" type="button">
+              <i class="fas fa-less-than"></i> Previous
+            </button>
+            <button class="modal-work__btn" type="button">
+              Next <i class="fas fa-greater-than"></i>
+            </button>
           </div>
 
         </div><!-- /.modal-work__content -->
