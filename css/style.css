@@ -183,6 +183,10 @@ p {
   font-weight: 700;
   border-width: 2px;
 }
+.btn--thin {
+  min-width: 145px;
+  font-size: 0.8rem;
+}
 .btn--active {
   background-color: #2b2a2c;
   color: #fff;
@@ -607,6 +611,43 @@ p {
   text-transform: uppercase;
   cursor: pointer;
 }
+.timeline {
+  display: flex;
+  margin-top: 4.2rem;
+  margin-bottom: 4.9333rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 768px;
+  position: relative;
+}
+.timeline:before {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 100%;
+  background-color: #2b2a2c;
+  position: absolute;
+  top: 0;
+  left: 50%;
+}
+.timeline__col {
+  width: 50%;
+}
+.timeline__col--left {
+  text-align: right;
+  padding-right: 3.2rem;
+}
+.timeline__col--right {
+  padding-left: 3.2rem;
+}
+.timeline__title {
+  margin-bottom: 2.5333rem;
+  font-size: 1.2rem;
+  color: #2b2a2c;
+  text-transform: uppercase;
+  font-weight: 700;
+}
 .text-center {
   text-align: center;
 }
@@ -614,4 +655,7 @@ p {
   display: block;
   max-width: 100%;
   height: auto;
+}
+.text-right {
+  text-align: right;
 }
