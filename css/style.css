@@ -641,12 +641,59 @@ p {
 .timeline__col--right {
   padding-left: 3.2rem;
 }
+.timeline__item {
+  margin-bottom: 2.5333rem;
+}
+.timeline__item:last-child {
+  margin-bottom: 0;
+}
 .timeline__title {
   margin-bottom: 2.5333rem;
   font-size: 1.2rem;
   color: #2b2a2c;
   text-transform: uppercase;
   font-weight: 700;
+}
+.timeline__date {
+  display: block;
+  margin-bottom: 0.8rem;
+  font-size: 0.9333rem;
+  color: #2b2a2c;
+  text-decoration: underline;
+}
+.timeline__subtitle {
+  font-size: 1.0667rem;
+  color: #2b2a2c;
+  font-weight: 700;
+}
+.timeline__position {
+  margin-top: 0.2rem;
+  font-size: 0.9333rem;
+  color: #2b2a2c;
+  font-style: italic;
+}
+.timeline__text {
+  margin-top: 0.5333rem;
+  font-size: 0.8rem;
+  color: #6a696b;
+  font-weight: 300;
+  line-height: 1.5;
+}
+.rogress-bar__item {
+  display: flex;
+}
+.progress-bar__right {
+  padding-left: 1.2667rem;
+}
+.progress-bar__bar {
+  width: 139px;
+  height: 6px;
+  background-color: #ccc;
+}
+.progress-bar__progress {
+  height: 100%;
+  background-color: #6a696b;
+  transition: width 0.15s linear;
 }
 .text-center {
   text-align: center;
