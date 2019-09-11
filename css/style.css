@@ -679,8 +679,21 @@ p {
   font-weight: 300;
   line-height: 1.5;
 }
-.rogress-bar__item {
+.progress-bar {
+  margin-bottom: 2.6rem;
+}
+.progress-bar__item {
   display: flex;
+  align-items: center;
+  margin-bottom: 0.3rem;
+}
+.progress-bar__title {
+  font-size: 0.9333rem;
+  font-weight: 300;
+  line-height: 1.57;
+}
+.progress-bar__left {
+  min-width: 135px;
 }
 .progress-bar__right {
   padding-left: 1.2667rem;
