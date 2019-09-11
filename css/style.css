@@ -507,6 +507,9 @@ p {
   position: relative;
   background-color: #fff;
 }
+.modal__dialog--sm {
+  max-width: 900px;
+}
 .modal__close {
   font-size: 35px;
   padding: 0;
@@ -531,7 +534,6 @@ p {
   text-transform: uppercase;
   font-weight: 700;
   color: #2b2a2c;
-  text-align: center;
 }
 .modal-work {
   display: flex;
@@ -707,6 +709,17 @@ p {
   height: 100%;
   background-color: #6a696b;
   transition: width 0.15s linear;
+}
+.contact {
+  display: flex;
+}
+.contact__left {
+  width: 47%;
+  padding: 2rem;
+}
+.contact__right {
+  width: 53%;
+  background: #2b2a2c;
 }
 .text-center {
   text-align: center;
