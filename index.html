@@ -8,7 +8,9 @@
   <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,300i,400,700&display=swap"
     rel="stylesheet">
-  <script src="https://kit.fontawesome.com/b6444d5608.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css"
+    integrity="sha384-rtJEYb85SiYWgfpCr0jn174XgJTn4rptSOQsMroFBPQSGLdOC5IbubP6lJ35qoM9"
+    crossorigin="anonymous">
   <title>Portfolio</title>
 </head>
 
@@ -39,7 +41,7 @@
           <a class="nav__link" href="">about me</a>
           <a class="nav__link" href="">blog</a>
           <a class="nav__link" href="">contact</a>
-          <a class="nav__link nav__link--lastBtn" href="">hire me</a>
+          <a class="nav__link nav__link--lastBtn" data-modal="#modal_message" href="">hire me</a>
         </nav>
 
       </div>
@@ -66,8 +68,9 @@
             <a href="" class="social__link"><img src="img/social/Twitter@2x.png" alt=""></a>
           </div>
 
-          <a href="" class="btn">Hire me</a>
-          <button type="button" class="btn">See my resume</button>
+          <!-- data-modal с # в начале - чтобы в js id сразу работал -->
+          <a class="btn" data-modal="#modal_message" href="">Hire me</a>
+          <button class="btn" data-modal="#modal_resume" type="button">See my resume</button>
         </div>
 
       </div><!-- /.intro__inner -->
@@ -89,7 +92,7 @@
       <div class="portfolio" id="portfolio">
 
         <div class="portfolio__col" data-cat="app">
-          <div class="work">
+          <div class="work" data-modal="#modal_work_1">
             <img class="img" src="https://placehold.it/370x300" alt="">
             <div class="work__content">
               <div class="work__cat">
@@ -104,7 +107,7 @@
         </div>
 
         <div class="portfolio__col" data-cat="website">
-          <div class="work">
+          <div class="work" data-modal="#modal_work_1">
             <img class="img" src="https://placehold.it/370x300" alt="">
             <div class="work__content">
               <div class="work__cat">
@@ -119,7 +122,7 @@
         </div>
 
         <div class="portfolio__col" data-cat="interaction">
-          <div class="work">
+          <div class="work" data-modal="#modal_work_1">
             <img class="img" src="https://placehold.it/370x300" alt="">
             <div class="work__content">
               <div class="work__cat">
@@ -134,7 +137,7 @@
         </div>
 
         <div class="portfolio__col" data-cat="website">
-          <div class="work">
+          <div class="work" data-modal="#modal_work_1">
             <img class="img" src="https://placehold.it/370x300" alt="">
             <div class="work__content">
               <div class="work__cat">
@@ -149,7 +152,7 @@
         </div>
 
         <div class="portfolio__col" data-cat="interaction">
-          <div class="work">
+          <div class="work" data-modal="#modal_work_1">
             <img class="img" src="https://placehold.it/370x300" alt="">
             <div class="work__content">
               <div class="work__cat">
@@ -164,7 +167,7 @@
         </div>
 
         <div class="portfolio__col" data-cat="app">
-          <div class="work">
+          <div class="work" data-modal="#modal_work_1">
             <img class="img" src="https://placehold.it/370x300" alt="">
             <div class="work__content">
               <div class="work__cat">
@@ -368,66 +371,61 @@
 
 
 
-  <!-- Modals -->
+  <!-- Message modal -->
+  <div class="modal" id="modal_message">
+    <div class="modal__dialog modal__dialog--sm">
 
-  <!-- Work modal -->
-  <div class="modal" style="display: none">
-    <div class="modal__dialog">
-
-      <button class="modal__close" type="button">
+      <button class="modal__close" type="button" data-close>
         <i class="fas fa-times-circle"></i>
       </button>
 
-      <div class="modal-work">
-        <div class="modal-work__preview">
-          <img class="modal-work__photo" src="https://placehold.it/790x780" alt="">
-        </div><!-- /.modal-work__preview -->
+      <div class="contact">
+        <div class="contact__left">
+          <h3 class="modal__title mb-0">LET'S TALK!</h3>
+          <h4 class="modal__subtitle">CALL ME OR SEND ME A REQUEST</h4>
 
-        <div class="modal-work__content">
+          <ul class="contact__info">
+            <li class="contact__info-item">
+              <i class="fas fa-phone"></i> (200) 100 3000
+            </li>
+            <li class="contact__info-item">
+              <i class="fas fa-envelope"></i> designer@hui43.com
+            </li>
+          </ul>
 
-          <div class="modal-work__header">
-            <h3 class="modal-work__title">Project title</h3>
-            <div class="modal-work__info">category <span>|</span> 2066</div>
-          </div>
+          <form class="form" action="/" method="post">
+            <div class="form__group">
+              <label class="form__label" for="input-email">Adress e-mail</label>
+              <input class="form__input" type="text" id="input-email" name="input-email"
+                placeholder="Adress e-mail">
+            </div>
 
-          <div class="modal-work__client">
-            <div>Client:</div>
-            <div>Creative Agency</div>
-          </div>
+            <div class="form__group">
+              <label class="form__label" for="input-request">Request</label>
+              <textarea class="form__textarea" type="text" id="input-request" name="input-request"
+                placeholder="Type your request..."></textarea>
+            </div>
 
-          <div class="modal-work__text">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Doloremque dolor totam eveniet minima, quidem veritatis. Porro voluptate doloribus
-              ipsum
-              accusamus dolore, incidunt atque architecto cum dolorum maxime quasi eius praesentium?
-            </p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Doloremque dolor totam eveniet minima, quidem veritatis. Porro voluptate doloribus
-              ipsum
-              accusamus dolore, incidunt atque architecto cum dolorum maxime quasi eius praesentium?
-            </p>
-          </div>
+            <div class="text-right">
+              <button class="btn" type="submit">Send</button>
+            </div>
+          </form>
 
-          <div class="modal-work__footer">
-            <button class="modal-work__btn" type="button">
-              <i class="fas fa-less-than"></i> Previous
-            </button>
-            <button class="modal-work__btn" type="button">
-              Next <i class="fas fa-greater-than"></i>
-            </button>
-          </div>
+        </div><!-- /.contact__left -->
 
-        </div><!-- /.modal-work__content -->
-      </div><!-- /.modal-work -->
+        <div class="contact__right">
+          <!-- img -->
+        </div><!-- /.contact__right -->
+      </div><!-- /.contact -->
 
     </div><!-- /.modal__dialog -->
-  </div><!-- /.work modal -->
+  </div><!-- /.message modal -->
 
   <!-- Resume modal -->
-  <div class="modal" style="display: none;">
+  <div class="modal" id="modal_resume">
     <div class="modal__dialog">
 
-      <button class="modal__close" type="button">
+      <button class="modal__close" type="button" data-close>
         <i class="fas fa-times-circle"></i>
       </button>
 
@@ -581,55 +579,58 @@
     </div><!-- /.modal__dialog -->
   </div><!-- /.resume modal -->
 
-  <!-- Message modal -->
-  <div class="modal" style="display: none;">
-    <div class="modal__dialog modal__dialog--sm">
+  <!-- Work modal -->
+  <div class="modal" id="modal_work_1">
+    <div class="modal__dialog">
 
-      <button class="modal__close" type="button">
+      <button class="modal__close" type="button" data-close>
         <i class="fas fa-times-circle"></i>
       </button>
 
-      <div class="contact">
-        <div class="contact__left">
-          <h3 class="modal__title mb-0">LET'S TALK!</h3>
-          <h4 class="modal__subtitle">CALL ME OR SEND ME A REQUEST</h4>
+      <div class="modal-work">
+        <div class="modal-work__preview">
+          <img class="modal-work__photo" src="https://placehold.it/790x780" alt="">
+        </div><!-- /.modal-work__preview -->
 
-          <ul class="contact__info">
-            <li class="contact__info-item">
-              <i class="fas fa-phone"></i> (200) 100 3000
-            </li>
-            <li class="contact__info-item">
-              <i class="fas fa-envelope"></i> designer@hui43.com
-            </li>
-          </ul>
+        <div class="modal-work__content">
 
-          <form class="form" action="/" method="post">
-            <div class="form__group">
-              <label class="form__label" for="input-email">Adress e-mail</label>
-              <input class="form__input" type="text" id="input-email" name="input-email"
-                placeholder="Adress e-mail">
-            </div>
+          <div class="modal-work__header">
+            <h3 class="modal-work__title">Project title</h3>
+            <div class="modal-work__info">category <span>|</span> 2066</div>
+          </div>
 
-            <div class="form__group">
-              <label class="form__label" for="input-request">Request</label>
-              <textarea class="form__textarea" type="text" id="input-request" name="input-request"
-                placeholder="Type your request..."></textarea>
-            </div>
+          <div class="modal-work__client">
+            <div>Client:</div>
+            <div>Creative Agency</div>
+          </div>
 
-            <div class="text-right">
-              <button class="btn" type="submit">Send</button>
-            </div>
-          </form>
+          <div class="modal-work__text">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Doloremque dolor totam eveniet minima, quidem veritatis. Porro voluptate doloribus
+              ipsum
+              accusamus dolore, incidunt atque architecto cum dolorum maxime quasi eius praesentium?
+            </p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Doloremque dolor totam eveniet minima, quidem veritatis. Porro voluptate doloribus
+              ipsum
+              accusamus dolore, incidunt atque architecto cum dolorum maxime quasi eius praesentium?
+            </p>
+          </div>
 
-        </div><!-- /.contact__left -->
+          <div class="modal-work__footer">
+            <button class="modal-work__btn" type="button">
+              <i class="fas fa-less-than"></i> Previous
+            </button>
+            <button class="modal-work__btn" type="button">
+              Next <i class="fas fa-greater-than"></i>
+            </button>
+          </div>
 
-        <div class="contact__right">
-          <!-- img -->
-        </div><!-- /.contact__right -->
-      </div><!-- /.contact -->
+        </div><!-- /.modal-work__content -->
+      </div><!-- /.modal-work -->
 
     </div><!-- /.modal__dialog -->
-  </div><!-- /.message modal -->
+  </div><!-- /.work modal -->
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="js/app.js"></script>
