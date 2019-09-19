@@ -80,20 +80,20 @@
     <div class="container">
 
       <div class="works__nav">
-        <a href="" class="works__nav--link">All</a>
-        <a href="" class="works__nav--link">App</a>
-        <a href="" class="works__nav--link">Websites</a>
-        <a href="" class="works__nav--link">Interaction</a>
+        <a href="" class="works__nav--link" data-filter="all">All</a>
+        <a href="" class="works__nav--link" data-filter="app">Apps</a>
+        <a href="" class="works__nav--link" data-filter="website">Websites</a>
+        <a href="" class="works__nav--link" data-filter="interaction">Interactions</a>
       </div>
 
-      <div class="portfolio">
+      <div class="portfolio" id="portfolio">
 
-        <div class="portfolio__col">
+        <div class="portfolio__col" data-cat="app">
           <div class="work">
             <img class="img" src="https://placehold.it/370x300" alt="">
             <div class="work__content">
               <div class="work__cat">
-                Category
+                Category: app
               </div>
               <div class="work__title">
                 Project title
@@ -103,12 +103,12 @@
           </div>
         </div>
 
-        <div class="portfolio__col">
+        <div class="portfolio__col" data-cat="website">
           <div class="work">
             <img class="img" src="https://placehold.it/370x300" alt="">
             <div class="work__content">
               <div class="work__cat">
-                Category
+                Category: website
               </div>
               <div class="work__title">
                 Project title
@@ -118,12 +118,12 @@
           </div>
         </div>
 
-        <div class="portfolio__col">
+        <div class="portfolio__col" data-cat="interaction">
           <div class="work">
             <img class="img" src="https://placehold.it/370x300" alt="">
             <div class="work__content">
               <div class="work__cat">
-                Category
+                Category: interaction
               </div>
               <div class="work__title">
                 Project title
@@ -133,12 +133,12 @@
           </div>
         </div>
 
-        <div class="portfolio__col">
+        <div class="portfolio__col" data-cat="website">
           <div class="work">
             <img class="img" src="https://placehold.it/370x300" alt="">
             <div class="work__content">
               <div class="work__cat">
-                Category
+                Category: website
               </div>
               <div class="work__title">
                 Project title
@@ -148,12 +148,12 @@
           </div>
         </div>
 
-        <div class="portfolio__col">
+        <div class="portfolio__col" data-cat="interaction">
           <div class="work">
             <img class="img" src="https://placehold.it/370x300" alt="">
             <div class="work__content">
               <div class="work__cat">
-                Category
+                Category: interaction
               </div>
               <div class="work__title">
                 Project title
@@ -163,12 +163,12 @@
           </div>
         </div>
 
-        <div class="portfolio__col">
+        <div class="portfolio__col" data-cat="app">
           <div class="work">
             <img class="img" src="https://placehold.it/370x300" alt="">
             <div class="work__content">
               <div class="work__cat">
-                Category
+                Category: app
               </div>
               <div class="work__title">
                 Project title
@@ -333,7 +333,6 @@
     </div><!-- /.container -->
   </section><!-- /.news -->
 
-
   <!-- Footer block -->
   <footer class="footer">
     <div class="container">
@@ -423,8 +422,6 @@
 
     </div><!-- /.modal__dialog -->
   </div><!-- /.work modal -->
-
-
 
   <!-- Resume modal -->
   <div class="modal" style="display: none;">
@@ -584,8 +581,6 @@
     </div><!-- /.modal__dialog -->
   </div><!-- /.resume modal -->
 
-
-
   <!-- Message modal -->
   <div class="modal" style="display: none;">
     <div class="modal__dialog modal__dialog--sm">
@@ -635,8 +630,9 @@
 
     </div><!-- /.modal__dialog -->
   </div><!-- /.message modal -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="js/app.js"></script>
 </body>
 
 </html>
-
-<!-- 29:00 -->
