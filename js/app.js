@@ -1,5 +1,6 @@
 $(function() {
   // Filter by tags
+
   let filter = $("[data-filter]");
 
   filter.on("click", function(event) {
@@ -23,7 +24,7 @@ $(function() {
   });
 
   // Modals
-  //
+
   let modalOpen = $("[data-modal]");
   let modalClose = $("[data-close]");
 
@@ -41,6 +42,9 @@ $(function() {
           transform: "rotateX(0)"
         });
     }, 100);
+
+    // Т.к. по умолчанию слайдер скрыт, вызывается эвент setPosition, чтобы не было проблем
+    $(".worksSlider").slick("setPosition");
   });
 
   modalClose.on("click", function(event) {
@@ -76,5 +80,26 @@ $(function() {
   // (чтобы окно не скрывалось при клике на него)
   $(".modal__dialog").on("click", function(event) {
     event.stopPropagation();
+  });
+
+  // Slider (https://kenwheeler.github.io/slick/)
+  $(".worksSlider").slick({
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    fade: true,
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 2000
+  });
+
+  $(".slickNext").on("click", function(event) {
+    event.preventDefault();
+    $("#worksSlider").slick("slickNext");
+  });
+
+  $(".slickPrev").on("click", function(event) {
+    event.preventDefault();
+    $("#worksSlider").slick("slickPrev");
   });
 });
