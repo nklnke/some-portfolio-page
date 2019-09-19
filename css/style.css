@@ -747,14 +747,18 @@ p {
 .contact__info-item svg {
   margin-right: 0.7333rem;
 }
-.label {
+.form__group {
+  margin-bottom: 1.8rem;
+}
+.form__label {
   display: inline-block;
   margin-bottom: 0.6rem;
   font-size: 0.8rem;
   color: #2b2a2c;
   font-weight: 700;
 }
-.input {
+.form__input,
+.form__textarea {
   display: block;
   width: 100%;
   padding: 1.3rem 1.8rem;
@@ -763,15 +767,22 @@ p {
   font-family: inherit;
   font-size: 0.8rem;
   line-height: 1.2;
-  font-weight: 400;
+  font-weight: 300;
+  color: #2b2a2c;
   transition: border-color 0.15s linear;
 }
-.input:focus {
+.form__input:focus,
+.form__textarea:focus {
   outline: none;
   border-color: #105;
 }
-.form__group {
-  margin-bottom: 1.8rem;
+.form__input::placeholder,
+.form__textarea::placeholder {
+  color: #2b2a2c;
+}
+.form__textarea {
+  height: 200px;
+  resize: none;
 }
 .text-center {
   text-align: center;
