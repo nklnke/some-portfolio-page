@@ -2,8 +2,28 @@
 
 .nav {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   height: 100%;
+
+  @media @mobile {
+    width: 100%;
+    height: auto;
+    padding: 1rem 1rem 3rem;
+    position: absolute;
+    display: none;
+    top: 100%;
+    right: 0;
+    z-index: 1000;
+
+    background-color: #fff;
+    box-shadow: 0 15px 100px @lightgray;
+    text-align: center;
+
+    &.show {
+      display: flex;
+    }
+  }
 }
 
 .nav__link {
@@ -50,5 +70,11 @@
       background-color: @black;
       color: @white;
     }
+  }
+
+  @media @mobile {
+    width: 100%;
+    margin-left: 0;
+    padding: 1rem 2rem;
   }
 }

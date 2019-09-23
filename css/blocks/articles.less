@@ -8,11 +8,20 @@
 
 .articles__col {
   width: 33.33333%;
-  padding: 1rem;
+  padding: 0 1rem;
+
+  @media @mobile {
+    width: 100%;
+  }
 }
 
 .articles__item {
   margin-bottom: 2rem;
+
+  @media @mobile {
+    max-width: 380px;
+    margin: 0 auto 3rem;
+  }
 }
 
 .articles__header {
